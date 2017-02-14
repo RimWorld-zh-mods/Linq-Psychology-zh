@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<InteractionDefs>
+
+  <!-- Random social interactions -->
+
+  <InteractionDef>
+    <defName>PrudeSeen</defName>
+    <label>saw naked</label>
+    <workerClass>Psychology.InteractionWorker_PrudeSeen</workerClass>
+    <symbol>Things/Mote/SpeechSymbols/DeepTalk</symbol>
+    <initiatorThought>PrudeSeen</initiatorThought>
+    <socialFightBaseChance>0.005</socialFightBaseChance>
+    <logRulesInitiator>
+      <rulesStrings>
+        <li>logentry->Saw [other_nameShortIndef] in the nude.</li>
+      </rulesStrings>
+    </logRulesInitiator>
+    <logRulesRecipient>
+      <rulesStrings>
+        <li>logentry->[other_nameShortIndef] saw me in the nude.</li>
+      </rulesStrings>
+    </logRulesRecipient>
+  </InteractionDef>
+  
+  <InteractionDef>
+    <defName>Conversation</defName>
+    <label>conversation</label>
+    <workerClass>Psychology.InteractionWorker_Conversation</workerClass>
+    <symbol>Things/Mote/SpeechSymbols/Chitchat</symbol>
+    <logRulesInitiator>
+      <rulesStrings>
+        <li>logentry->Struck up a conversation with [other_nameShortIndef].</li>
+      </rulesStrings>
+    </logRulesInitiator>
+    <logRulesRecipient>
+      <rulesStrings>
+        <li>logentry->[other_nameShortIndef] started a conversation with me.</li>
+      </rulesStrings>
+    </logRulesRecipient>
+  </InteractionDef>
+  
+  <InteractionDef>
+    <defName>EndConversation</defName>
+    <label>ended conversation</label>
+    <workerClass>InteractionWorker_DeepTalk</workerClass> <!-- This will prevent them from actually doing it.-->
+    <symbol>Things/Mote/SpeechSymbols/DeepTalk</symbol>
+    <logRulesInitiator>
+      <rulesStrings>
+        <li>logentry->Ended a conversation with [other_nameShortIndef].</li>
+      </rulesStrings>
+    </logRulesInitiator>
+    <logRulesRecipient>
+      <rulesStrings>
+        <li>logentry->Ended a conversation with [other_nameShortIndef].</li>
+      </rulesStrings>
+    </logRulesRecipient>
+  </InteractionDef>
+  
+</InteractionDefs>
